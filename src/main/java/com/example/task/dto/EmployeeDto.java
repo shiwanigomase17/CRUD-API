@@ -11,6 +11,7 @@ public class EmployeeDto {
     private Long designationId;
     private Double grossSalary;
     private String designation;
+    
 	public String getName() {
 		return name;
 	}
@@ -53,6 +54,8 @@ public class EmployeeDto {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+	
+	
 
    
     

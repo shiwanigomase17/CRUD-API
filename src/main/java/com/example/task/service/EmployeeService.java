@@ -55,6 +55,7 @@ public class EmployeeService {
 //        
         Salary salary = new Salary();
         salary.setGrossSalary(employeeDto.getGrossSalary());
+       
         
 //        salary.setBasicSalary(calculateBasicSalary(employeeDto.getGrossSalary()));
         
@@ -83,6 +84,7 @@ public class EmployeeService {
         employee.setjDate(employeeDto.getjDate());
         employee.setDesignation(designation);
         employee.setSalary(salary);
+        
         
         employee.setSalary(salary);
         salary.setEmployee(employee);
@@ -223,6 +225,16 @@ public class EmployeeService {
 	
 		return employeeRepository.findAll();
 	}
+	
+	
+
+	
+
+//	public List<Employee> getEmployeesByDesignation(String name, String salaryMonth) {
+//		
+//		return employeeRepository.findByNameAndMonth(name, salaryMonth);
+//	}
+
 
 
  

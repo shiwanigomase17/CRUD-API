@@ -13,6 +13,7 @@ import com.example.task.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api/employees")
+@CrossOrigin("*")
 public class EmployeeController {
 
     @Autowired
@@ -43,6 +44,9 @@ public class EmployeeController {
     public List<Employee> getAllEmp(){
     	return employeeService.findAll();
     }
+    
+    
+  
 
 	  @PutMapping("/updateEmp/{id}")
 	    public String updateEmployeeById(@PathVariable Long id, @RequestBody EmployeeDto employeeDto) {
@@ -60,6 +64,11 @@ public class EmployeeController {
 	       return "employee details deleted successfully";
 
 	    }
+	  
+//	  @GetMapping("/findByNameAndMonth")
+//	   public List<Employee> getEmployeeByNameAndMonth(@RequestParam String name, @RequestParam String salaryMonth){
+//		  return employeeService.getEmployeesByDesignation(name,salaryMonth);
+//	  }
 }
 
 

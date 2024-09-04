@@ -23,8 +23,12 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 	Employee save(EmployeeDto employeeDto);
 	
+//	@Query("SELECT e FROM Employee e WHERE e.name = :name AND e.salary.salaryMonth = :salaryMonth")
+//	List<Employee> findByNameAndMonth(String name, String salaryMonth);
+	
 
 	void deleteEmployeeById(Long id);
+
 
 //	List<Employee> findByDesignation(String designation);
 }

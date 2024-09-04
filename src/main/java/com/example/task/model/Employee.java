@@ -8,12 +8,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -26,7 +28,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
     @Column(name = "emp_code", unique = true, nullable = false)
@@ -47,6 +49,11 @@ public class Employee {
     @JoinColumn(name = "salary_id", nullable = false)
     //@JsonBackReference
     private Salary salary;
+    
+    
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JoinColumn(name = "monthlySalary_id", nullable = false)
+    private List <MonthlySalary> monthlySalary;
     
     @Column(name = "insurance")
     private Double insurance;

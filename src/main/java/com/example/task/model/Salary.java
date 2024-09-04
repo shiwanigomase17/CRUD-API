@@ -46,6 +46,8 @@ public class Salary {
     
     @Column(name = "deduction")
     private Double deduction;
+    
+  
 
     @OneToOne
     @JoinColumn(name = "employee_id")
@@ -116,6 +118,7 @@ public class Salary {
 	public void setDeduction(Double deduction) {
 		this.deduction = deduction;
 	}
+	
 	
 
 
